@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->integer('capacidade_maxima_acomodacao');
             $table->string('status_acomodacao', 50);
             $table->integer('ponto_atribuido')->nullable(); // Pontuação atribuída
+            $table->foreignId('fk_id_hotel')->constrained('unidades_de_hotel', 'id_hotel'); // Relaciona com Unidade de Hotel
             $table->timestamps();
         });
     }

@@ -17,8 +17,12 @@ class Acomodacao extends Model
         'capacidade_maxima_acomodacao',
         'status_acomodacao',
         'ponto_atribuido',
+        'fk_id_hotel'
     ];
 
-    
+    public function unidadeDeHotel()
+    {
+        return $this->belongsTo(UnidadeDeHotel::class, 'fk_id_hotel', 'id_hotel');
+    }
 }
 

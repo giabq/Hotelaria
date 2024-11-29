@@ -1,3 +1,5 @@
+<!-- resources/views/components/layout.blade.php -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +8,8 @@
 </head>
 <body>
     <div class="container">
-        @yield('content')
+        <!-- O conteúdo da view será injetado aqui no slot -->
+        {{ $slot }}
     </div>
 </body>
 </html>

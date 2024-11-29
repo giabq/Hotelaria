@@ -21,14 +21,14 @@ class UnidadeDeHotelController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'registro_imobiliario' => 'required',
+            'registro_imobiliario' => 'required|integer',
             'caixa_entrada' => 'required|numeric',
             'caixa_saida' => 'required|numeric',
             'num_vagas' => 'required|integer',
-            'local_hot' => 'required',
-            'categoria_hot' => 'required',
-            'nome_fantasia_hot' => 'required',
-            'tamanho_hot' => 'required'
+            'local_hot' => 'required|string|max:50',
+            'categoria_hot' => 'required|string|max:50',
+            'nome_fantasia_hot' => 'required|string|max:50',
+            'tamanho_hot' => 'required|string|max:50'
         ]);
 
         UnidadeDeHotel::create($request->all());
@@ -42,21 +42,27 @@ class UnidadeDeHotelController extends Controller
     }
 
     public function edit(UnidadeDeHotel $unidadeDeHotel)
-    {
-        return view('unidades_de_hotel.edit', compact('unidadeDeHotel'));
+{
+    if (!$unidadeDeHotel) {
+        return redirect()->route('unidades_de_hotel.index')
+                         ->with('error', 'Unidade de Hotel não encontrada.');
     }
+
+    return view('unidades_de_hotel.edit', compact('unidadeDeHotel'));
+}
+
 
     public function update(Request $request, UnidadeDeHotel $unidadeDeHotel)
     {
         $request->validate([
-            'registro_imobiliario' => 'required',
+            'registro_imobiliario' => 'required|integer',
             'caixa_entrada' => 'required|numeric',
             'caixa_saida' => 'required|numeric',
             'num_vagas' => 'required|integer',
-            'local_hot' => 'required',
-            'categoria_hot' => 'required',
-            'nome_fantasia_hot' => 'required',
-            'tamanho_hot' => 'required'
+            'local_hot' => 'required|string|max:50',
+            'categoria_hot' => 'required|string|max:50',
+            'nome_fantasia_hot' => 'required|string|max:50',
+            'tamanho_hot' => 'required|string|max:50'
         ]);
 
         $unidadeDeHotel->update($request->all());

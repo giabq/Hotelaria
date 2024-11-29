@@ -12,6 +12,8 @@ class Reserva extends Model
     protected $table = 'reservas';
     protected $primaryKey = 'registro_reserva';
     protected $fillable = [
+        'status_res',
+        'no_pessoas',
         'preco_reserva',
         'data_e_hora_checkin',
         'data_e_hora_checkout',

@@ -25,7 +25,7 @@ class ClienteController extends Controller
             'nome' => 'required',
             'sobrenome' => 'required',
             'telefone' => 'required',
-            'email' => 'required|email|unique:clientes'
+            'email' => 'required|email|unique:clientes',
         ]);
 
         Cliente::create($request->all());

@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('reservas', function (Blueprint $table) {
             $table->id('registro_reserva'); // Chave primária
+            $table->boolean('status_res')->nullable();
             $table->float('preco_reserva');
             $table->timestamp('data_e_hora_checkin');
             $table->timestamp('data_e_hora_checkout');
@@ -20,6 +21,7 @@ return new class extends Migration {
             $table->foreignId('fk_cpf_cliente')->constrained('clientes', 'cpf'); // Relaciona com Cliente
             $table->foreignId('fk_id_hotel')->constrained('unidades_de_hotel', 'id_hotel'); // Relaciona com Unidade de Hotel
             $table->foreignId('fk_registro_acomodacao')->constrained('acomodacoes', 'registro_acomodacao'); // Relaciona com Acomodação
+            $table->integer('no_pessoas');
             $table->timestamps();
         });
     }
