@@ -11,5 +11,6 @@ Route::get('/', function () {
 
 Route::resource('clientes', ClienteController::class);
 Route::resource('unidades_de_hotel', UnidadeDeHotelController::class);
+
 Route::resource('acomodacoes', AcomodacaoController::class);
 Route::resource('reservas', ReservaController::class);

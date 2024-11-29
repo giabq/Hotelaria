@@ -15,6 +15,8 @@ class UnidadeDeHotel extends Model
 
     protected $table = 'unidades_de_hotel';
     protected $primaryKey = 'id_hotel';
+    public $incrementing = true;
+protected $keyType = 'int';
     protected $fillable = [
         'registro_imobiliario',
         'caixa_entrada',
