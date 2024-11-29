@@ -104,4 +104,11 @@ class ReservaController extends Controller
 
         return redirect()->route('reservas.index')->with('success', 'Reserva removida com sucesso.');
     }
+
+    public function getAcomodacoesByHotel($id_hotel)
+    {
+        $acomodacoes = Acomodacao::where('fk_id_hotel', $id_hotel)->get();
+        return response()->json($acomodacoes);
+    }
+
 }

@@ -2,10 +2,9 @@
     <h2>Detalhes da Reserva</h2>
 
     <div class="card">
-        <div class="card-header">
-            <h4>Reserva ID: {{ $reserva->registro_reserva }}</h4>
-        </div>
+
         <div class="card-body">
+            <p><strong>Registro da Reserva:</strong> {{ $reserva->registro_reserva }}</p>
             <p><strong>Cliente:</strong> {{ $reserva->cliente->nome ?? 'Não informado' }}</p>
             <p><strong>Hotel:</strong> {{ $reserva->unidadeDeHotel->nome_fantasia_hot ?? 'Não informado' }}</p>
             <p><strong>Acomodação:</strong> {{ $reserva->acomodacao->tipo_acomodacao ?? 'Não informado' }}</p>

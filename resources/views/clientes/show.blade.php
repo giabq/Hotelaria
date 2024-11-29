@@ -42,6 +42,12 @@
                     {{ $cliente->email }}
                 </div>
             </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="form-group">
+                    <strong>Pontos:</strong>
+                    {{ $cliente->pontos }}
+                </div>
+            </div>
         </div>
     </div>
 </x-layout>
